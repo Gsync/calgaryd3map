@@ -1,0 +1,8 @@
+
+.community {
+  stroke: #111;
+}
+
+.community:hover {
+  cursor: pointer;
+}
