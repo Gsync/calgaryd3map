@@ -1,7 +1,10 @@
 
-.community {
-  stroke: #111;
-}
+
+path {
+      stroke: #111;
+      stroke-width: 0.4px;
+    }
+
 
 .community:hover {
   cursor: pointer;
