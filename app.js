@@ -26,4 +26,32 @@ d3.queue()
         drawMap(geodata, data);
         createBar(w, h);
         drawBar(data, "");
+
+        //tooltip
+        d3.selectAll('svg')
+            .on('mousemove touchmove', updateTooltip);
+
+        function updateTooltip() {
+            let tooltip = d3.select('.tooltip');
+            let target = d3.select(d3.event.target);
+            let isCommunity = target.classed('community');
+            let isBar = target.classed('bar');
+            let data;
+
+            if (isCommunity) data = target.data()[0].properties;
+            if (isBar) data = target.data()[0];
+
+            tooltip
+                .style('opacity', +(isCommunity || isBar))
+                .style('left', (d3.event.pageX - tooltip.node().offsetWidth / 2) + 'px')
+                .style('top', (d3.event.pageY - tooltip.node().offsetHeight - 2) + 'px');
+            if (data) {
+                tooltip.html(`
+                <p>Community: ${data.name}</p>
+                <p>Male: ${data.male_cnt}</p>
+                <p>Female: ${data.female_cnt}</p>
+                `)
+            }
+        }
+
     })
