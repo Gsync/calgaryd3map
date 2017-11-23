@@ -25,6 +25,11 @@ function drawMap(geodata, data) {
         .append('path')
         .attr('d', path)
         .classed('community', true)
+        .on('click', function () {
+            let comobj = d3.select(this);
+            let commmunity = comobj.data()[0].properties.name;
+            drawBar(data, commmunity);
+        })
         .attr('fill', 'steelblue');
 
 }
