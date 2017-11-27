@@ -15,6 +15,16 @@
         <div class="container-fluid"></div>
         <div class="navbar-header">
             <a href="#" class="navbar-brand">Calgary Community Businesses Data Analytics Dashboard</a>
+            <div class="navbar-form navbar-right">
+                <div class="form-group">
+                    <select class="form-control" id="dropdown">
+                        <option value="BELTLINE">Beltline</option>
+                        <option value="WESTWINDS">Westwinds</option>
+                        <option value="MCCALL">McCall</option>
+                        <option value="FOOTHILLS">Foothills</option>
+                    </select>
+                </div>
+            </div>
         </div>
         </div>
     </div>
@@ -27,6 +37,7 @@
             <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" id="pie"></svg>
         </div>
     </section>
+    <p>Note: Click on the community to view the updated bar chart</p>
     <div class="tooltip"></div>
     <script src="./lib/d3.min.js"></script>
     <script src="./lib/topojson3.js"></script>

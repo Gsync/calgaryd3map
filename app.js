@@ -54,4 +54,11 @@ d3.queue()
             }
         }
 
+
+        d3.select('#dropdown')
+            .on('input', function () {
+                let community = d3.event.target.value;
+                drawBar(data, community);
+            });
+
     })
